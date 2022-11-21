@@ -1,0 +1,281 @@
+.root{
+    --body: white;
+    --nav-color: rgb(44, 34, 34);
+    --white-color:white;
+    /* --grey-color:grey; */
+    --black-color: black;
+    --blur-blue: rgb(49, 49, 124);
+    --gold-color:gold;
+    --red-color: red;
+    --crimson-color: crimson;
+    --footer-color: black;
+    --footer-text: white;
+    --latest: black;
+    --caddress: black;
+
+}
+.dark{
+    --body: black;
+    --nav-color: rgb(34, 16, 16);
+    --white-color:white;
+    /* --grey-color:grey; */
+    --black-color: white;
+    --blur-blue: rgb(49, 49, 124);
+    --gold-color:gold;
+    --red-color: red;
+    --crimson-color: crimson;
+    --footer-color: black;
+    --footer-text: white;
+    --latest: white;
+    --caddress: white;
+
+}
+
+.body{
+    background: var(--body);
+}
+
+.navbar{
+    background-color: var(--nav-color);
+ 
+    /* opacity: .6; */
+}
+
+.navbar-brand{
+    color: var(--white-color);
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.caddress{
+    color: var(--caddress);
+}
+
+#navbarSupportedContent ul{
+    margin-left: 8.5rem;
+}
+
+.navbar-nav li a {
+    color: blue;
+    text-decoration: none;
+    padding-right: 1.8rem;
+}
+
+.nav-link{
+    color: var(--white-color);
+}
+
+
+
+
+/* .navbarSupportedContent a.hover{
+    color: indigo;
+    border-bottom: 3px solid grey;
+
+} */ 
+
+.dropdown-menu{
+    background: var(--nav-color);
+    opacity: .7;
+
+}
+
+.dropdown-item{
+    color: var(--white-color);
+}
+
+.dropdown-item:hover{
+    background-color: var(--gold-color);
+}
+
+.like{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black-color);
+    opacity: .5;
+}
+
+.imgg{
+    height: 30vh;
+}
+
+/* .ccform{
+    margin: 3rem;
+} */
+.cform{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.cform form{
+    width: 100%;
+    padding: 1rem;
+    background: var(--grey-color);
+}
+
+.cform form input[type="text"],
+.cform form input[type="email"]{
+    width: 100%;
+    box-shadow: none;
+    color: var(--nav-color);
+    outline: none;
+}
+
+
+.cform form textarea{
+    width: 100%;
+    height: min(6.5rem);
+    box-shadow : none;
+    outline: none;
+
+}
+
+.bale{
+    color: var(--blur-blue);
+    background: var(--white-color);
+}
+
+.bale:hover{
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    background: var(--blur-blue);
+
+}
+
+.fas{
+    color: red;
+    font-size: 3rem;
+    background: black;
+    padding: .7rem;
+    transition: ease 2s;
+}
+
+.about{
+    background: url(../img/imani-bahati-LxVxPA1LOVM-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: fixed;
+    height: 40vh;
+
+}
+
+.about-txt{
+    color: var(--black-color);
+    position: absolute;
+    left: 70%;
+    background-color: var(--white-color);
+    opacity: .6;
+    margin-top: 3rem;
+    padding: .6rem;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.footer{
+    color: var(--footer-text);
+    background-color: var(--footer-color);
+}
+
+.footer a{
+    color: var(--white-color);
+    text-transform: capitalize;
+
+}
+
+
+.fa-brands{
+    font-size: 1.7rem;
+    transition: ease 2s;
+
+}
+
+.fa-brands:hover{
+    transition: ease 1s;
+    transform: translateY(-20px);
+    color: black;
+}
+.dropdown-item:hover{
+    color: gold;
+}
+
+
+
+.carousel{
+    /* clip-path: polygon(0 0, 100% 0%, 100% 89%, 0% 100%); */
+
+
+}
+
+.carousel-indicators button{
+    border-radius: 50%;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.show-hide{
+    position: relative;
+}
+
+.show{
+    position: absolute;
+    top: 127%;
+    right: 32%;
+    color:black;
+}
+
+.show .fa-eye{
+    display: none;
+}
+
+.show .shower .fa-eye-slash{
+    display: none;
+
+}
+
+
+.fate{
+    border: none;
+}
+
+.latest{
+    background-color: var(--latest);
+}
+
+.latest::after{
+    content: "";
+    /* display: block; */
+    height: .7rem;
+    width: 8.5rem;
+    border-radius: 100%;
+    background-color: var(--crimson-color);
+    margin: auto;
+    /* transform: translateX(10px); */
+}
+
+/* .latest::before{
+    content: "$";
+    display: block;
+    height: .5rem;
+    width: 9rem;
+    border-radius: 100%;
+    background-color: var(--crimson-color);
+    margin: auto;
+    transform: translateX(50px);
+
+} */
+
+.buton-fre{
+    color: var(--nav-color);
+    background: var(--white-color);
+
+}
+
+.buton-fre:hover{
+    color: var(--white-color);
+    background: var(--nav-color);
+    border: 2px solid var(--white-color);
+}
+

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header %}
+{% block title %} | profile{% endblock title %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center text-capitalize latest">{{profile.first_name}} Profile</h2>
+    <div class="row justify-content-center">
+        <div class="col-10 col-sm-10 col-md-4 col-lg-3 pt-5">
+            <div class="prof_img">
+                <img src="{{profile.pix.url}}" class="w-100 rouded-pill" alt="">
+            </div>
+        </div>        
+                <!-- <div class="profile_form2"> -->
+        <div class="col-10 col-sm-10 col-md-4 col-lg-6 mb-5 game">            
+                  <div class="cform">
+                      <div class="ccform">
+                        <form>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Username</label>
+                            <input type="text" value="{{profile.user.username|title}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">First Name</label>
+                            <input type="text" value= "{{profile.first_name|title}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                            <input type="text" value="{{profile.last_name|title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" value="{{profile.email}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      
+                            <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                            <input type="text" value="{{profile.phone}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">Gender</label>
+                            <input type="text" value="{{profile.gender|title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+      
+                            <label for="exampleInputEmail1" class="form-label">Home Address</label>
+                            <input type="text" value="{{profile.address|title}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">Nationality</label>
+                            <input type="text" value="{{profile.nationality|title}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            <label for="exampleInputEmail1" class="form-label">State</label>
+                            <input type="text" value="{{profile.state|title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                          </div>
+                          
+                          
+                          <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+                          <!-- <a href="" class="btn btn-info">Sign up</a> -->
+                        </form>
+                        
+                      </div>
+                    </div>
+                  
+
+                </div>
+
+                <div class="col-10 col-sm-10 col-md-3 col-lg-3 pt-5">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="{% url 'index' %}" class="btn w-75 btn-info">Home</a></li>
+                        <li class="mb-3"><a href="{% url 'profile' %}" class="btn w-75 btn-info">Profile</a></li>
+                        <li class="mb-3"><a href="{% url 'profile_update' %}" class="btn w-75 btn-info">Profile_update</a></li>
+                        <li class="mb-3"><a href="{% url 'shopcart' %}" class="btn w-75 btn-info">Shopcart</a></li>
+                        <li class="mb-3"><a href="{% url 'history' %}" class="btn w-75 btn-info">History</a></li>
+                        <li class="mb-3"><a href="{% url 'password' %}" class="btn w-75 btn-info">Password Update</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer %}  

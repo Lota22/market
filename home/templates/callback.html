@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header %}
+
+{% block title %} | callback{% endblock title %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <!-- <h2 class="name">Details</h2> -->
+    <div class="row">
+        <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"></div>
+        <div class="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+            <div class="names text-center text-capitalize">Dear {{profile.first_name}} {{profile.last_name}}</div>
+            <h5 class="text-center">Your purchase of new {{trolley.title_g}} from our brand was succesful. 
+              we look foward to doing more business with you.
+            </h5>
+                <p class="text-center">Thank you for your patronage....</p>
+
+            
+        </div>
+    </div>
+</div>
+<div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"></div>
+
+
+{% endblock content %}
+
+{%block contact %}  {%include 'contact.html' %}  {% endblock contact %}
+
+{% block about %}  {% include 'about.html' %}  {% endblock about %}
+
+{% block team %}  {% include 'team.html' %}  {% endblock team %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer %}

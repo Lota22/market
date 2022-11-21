@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header %}
+{% block title %} | Home{% endblock title %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center text-capitalize latest">Latest products</h2>
+    <div class="row justify-content-center">
+      {% if adeyemi %}
+        {% for items in adeyemi %}
+          <div class="col-10 col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{{items.img.url}}" class="card-img-top imgg" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{items.title}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="{% url 'category' items.id items.slug %}" class="btn btn-primary">See Products </a>
+              </div>
+            </div>  
+          </div>
+        {% endfor %}
+      {% endif %}    
+      
+      
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{%block contact %}  {%include 'contact.html' %}  {% endblock contact %}
+
+{% block about %}  {% include 'about.html' %}  {% endblock about %}
+
+{% block team %}  {% include 'team.html' %}  {% endblock team %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer %}

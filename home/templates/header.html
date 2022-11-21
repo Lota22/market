@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">CYBER DEV STORE</a>
+          
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            </li>
+            {% comment %} <li class="nav-item">
+              <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+            </li> {% endcomment %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'product' %}">Product</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'categories' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if categories %}
+                    {% for items in categories %}
+                      <li><a class="dropdown-item" href="{% url 'category' items.id items.slug %}">{{item}}</a></li>
+                    {% endfor %}
+                {% endif %}
+                      
+                
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'categories' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if user.is_authenticated %}
+                  <li><a class="dropdown-item" href="{% url 'signout' %}">Signout</a></li>
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">{{user.username}}</a></li>
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">
+                    {% if cartcount > 0 %}
+                      <span class="badge bg-info text-dark">{{cartcount}}</span>
+
+                    {% else %}
+                      <span class="badge bg-info text-dark">0</span>
+
+                    {% endif %}
+                  </a></li>
+
+                {% else %}
+                    <li><a class="dropdown-item" href="{% url 'signin' %}">Sign In</a></li>
+
+                    <li><a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a></li>
+              {% endif %}    
+
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'signin' %}" tabindex="-1" aria-disabled="true">Signin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'signup' %}" tabindex="-1" aria-disabled="true">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'signout' %}" tabindex="-1" aria-disabled="true">Signout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'profile' %}" tabindex="-1" aria-disabled="true">Profile</a>
+            </li>
+          </ul>
+          <form class="d-flex" action="{% url 'search' %}" method="POST">
+          {% csrf_token %}  
+            <input class="form-control me-0" name="search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn buton-fre" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <div class="toggle">
+        <!-- <i class="fa-solid fa-sun"></i> -->
+        <i class="fa-solid fa-moon"></i>
+      </div>
+  </nav>
+
+  {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <strong>{{message}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>  
+      {% endfor %}
+  {% endif %}      
+</div>

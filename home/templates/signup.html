@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header %}
+{% block title %} | Sign Up{% endblock title %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+  <h2 class="name text-center">Sign Up</h2>
+  <div class="row">
+      <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"></div>
+      <div class="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+
+        <div class="cform " style="background-color: rgb(19, 19, 24); border-radius: 20px;"> 
+          <div class="ccform form2 p-1 " style="background-color: rgb(24, 24, 75);">
+            <form action="{% url 'signup' %}" method="POST" style="background-color: whitesmoke; border-radius: 17px; border: 4px grey;">
+            {% csrf_token %}  
+              <div class="mb-3">
+                <label for="exampleInputText1" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText1" aria-describedby="emailHelp">
+                
+                <label for="exampleInputText2" class="form-label">First Name</label>
+                <input type="text" name="first_name" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText2" aria-describedby="emailHelp">
+                
+                <label for="exampleInputText3" class="form-label">Last Name</label>
+                <input type="text" name="last_name"class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText3" aria-describedby="emailHelp">
+                
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                <label for="exampleInputText4" class="form-label">Phone Number</label>
+                <input type="text" name="phone" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText4" aria-describedby="emailHelp">
+                
+                <label for="exampleInputText4" class="form-label">Gender</label>
+                <input type="text" name="gender" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText4" aria-describedby="emailHelp">
+                
+
+                <label for="exampleInputText5" class="form-label">Home Address</label>
+                <input type="text" name="address" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText5" aria-describedby="emailHelp">
+                
+                <label for="exampleInputText5" class="form-label">Nationality</label>
+                <input type="text" name="nationality" class="form-control rounded-pill"style="margin-bottom:1rem;" id="exampleInputText5" aria-describedby="emailHelp">
+                
+                <label for="exampleInputText6" class="form-label">State</label>
+                <input type="text" name="state" class="form-control rounded-pill" style="margin-bottom:1rem;" id="exampleInputText6" aria-describedby="emailHelp">
+                <input type="hidden" name= "pix" value="pix/avatar.jpg" class="form-control rounded-pill" style="margin-bottom:1rem;" id="exampleInputText7" aria-describedby="emailHelp">
+                
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password1" class="form-control rounded-pill" style="margin-bottom:1rem;" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                <input type="password" name="password2" class="form-control rounded-pill" style="margin-bottom:1rem;" id="exampleInputPassword1">
+                <input type="hidden" class="form-control rounded-pill" style="margin-bottom:1rem;" id="exampleInputPassword1" aria-describedby="emailHelp">
+                
+              </div>
+              
+              <button type="submit" class="btn rounded-pill" style="background-color: rgb(21, 21, 32); color: white;">Sign up</button>
+              <a href="{% url 'signin' %}" class="btn btn-dark rounded-pill">Sign in</a>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"></div>
+
+
+
+
+
+{% endblock content %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer %}  
