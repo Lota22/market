@@ -1,8 +1,8 @@
 <div class="container">
-    <h2 class="text-capitalize text-center latest"></h2>
-    <div class="row justify-content-center">
-      <div class="col-10 col-sm-10 col-md-6 p-5">
-        <div class="caddress">
+    <h2 class="text-capitalize text-center latest">Contact Us</h2>
+    <div class="row justify-content-center" style="border: 2px solid grey; border-radius: 10px">
+      <div class="col-10 col-sm-10 col-md-6 p-5 mt-3 mb-3" style="border-right-style: groove;border-right: 2px solid grey">
+        <div class="caddress mb-2" style="color: darkblue; font-weight:500;font-size:1.1rem; ">
           <p>Address:<span>2b Yinusa Street</span></p>
           <p>Ikeja, Lagos State</p>
           <p>Phone : +1 (234) 456 789</p>
@@ -10,10 +10,10 @@
           <p>Website: www.teamcyberdev.com</p>
         </div>  
       </div>
-      <div class="col-10 col-sm-10 col-md-6 pb-5">
+      <div class="col-10 col-sm-10 col-md-6 pb-2">
         <div class="ccform">
           <div class="cform">
-            <form action="{% url 'contact' %}" method="POST">
+            <form action="{% url 'contact' %}" method="POST" >
             {% csrf_token %}  
               <div class="mb-3">
                 
@@ -31,7 +31,7 @@
                
               </div>
              
-              <button type="submit" class="btn btn bale">Submit</button>
+              <button type="submit" class="btn btn bale" style="border: 1.1px solid grey;">Submit</button>
             </form>
 
 
